@@ -1,0 +1,62 @@
+.wrapper_loginSignup {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   flex: 0 0 50%;
+}
+
+.loginSignup {
+   text-align: center;
+   margin-top: 20px;
+   width: 600px;
+
+   background-color: $black;
+   color: $white;
+
+   &__icon {
+      font-size: 50px;
+   }
+
+   &__inputs {
+      width: 100%;
+   }
+
+   &__input {
+      padding: 5px 10px;
+      margin: 20px 0;
+
+      text-align: left;
+      border-bottom: 2px solid $silver;
+      background: #192734;
+      font-size: 20px;
+
+      span {
+         font-size: 15px;
+         color: $silver;
+      }
+
+      &:focus-within {
+         border-bottom: 2px solid $blue;
+         span {
+            color: $blue;
+         }
+      }
+   }
+
+   &__btn {
+      width: 100%;
+      margin-bottom: 20px;
+
+      background-color: $blue;
+      color: $white;
+
+      &:hover {
+         background-color: darken(#1da0f2f8, $amount: 5);
+      }
+
+      &:active {
+         background-color: lighten(#1da0f2, $amount: 5);
+      }
+   }
+}
