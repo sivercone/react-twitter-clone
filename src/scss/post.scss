@@ -1,0 +1,60 @@
+.post {
+   box-shadow: 0 0 1px 0 #8899a6;
+   padding: 0 10px;
+
+   &__column {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: row;
+   }
+
+   &__textarea {
+      width: 100%;
+      padding-right: 25px;
+   }
+
+   &__buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      vertical-align: middle;
+      padding: 10px 0;
+      padding-left: 65px;
+      padding-right: 25px;
+
+      &__more {
+         button {
+            color: $blue;
+            background: none;
+         }
+      }
+
+      &__send {
+         display: flex;
+         align-items: center;
+         flex-direction: row;
+
+         .progressbar {
+            margin: 0 5px;
+            width: 20px;
+            height: 20px;
+            transform: rotate(-90deg);
+         }
+
+         span {
+            margin: 0 5px;
+            color: $silver;
+         }
+
+         button {
+            margin-left: 5px;
+         }
+      }
+   }
+
+   &__bottom {
+      height: 12px;
+      box-shadow: 0 0 1px 0 #8899a6;
+      background-color: #253341;
+   }
+}
