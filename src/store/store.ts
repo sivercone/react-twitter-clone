@@ -1,9 +1,10 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { rootReducer } from './rootReducer';
-import rootSaga from './saga';
 
-import { TweetsState } from './ducks/tweets/contracts/state';
+import rootSaga from './saga';
+import { rootReducer } from './rootReducer';
+import { TweetsState } from './ducks/tweets/state';
+import { TagsState } from './ducks/tags/state';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -13,6 +14,8 @@ export interface RootState {
    loadingState: any;
    items: any;
    tweets: TweetsState;
+   tags: TagsState;
+   tweetData: TweetsState;
 }
 
 // sagaMiddleware каждый раз вызывается когда происходя изменения в rootReducer(а изменения в редюсере будут когда действуют actions)

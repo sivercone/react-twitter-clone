@@ -1,7 +1,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-export const Post = () => {
+export const CreatePost = () => {
    const [text, setText] = React.useState<string>('');
 
    const TEXT_LIMIT: number = 280;
@@ -23,7 +23,7 @@ export const Post = () => {
       <div className="post">
          <div className="post__column">
             <div className="tweet__avatar" style={{ padding: 0 }}>
-               <img alt="avatar" src="https://pbs.twimg.com/profile_images/1226042855552094208/z2_0Cfze_bigger.jpg" />
+               <img alt="" src="https://pbs.twimg.com/profile_images/1226042855552094208/z2_0Cfze_bigger.jpg" />
             </div>
             <div className="post__textarea">
                <TextareaAutosize onChange={handleChangeTextarea} value={text} placeholder="What's happening?" />

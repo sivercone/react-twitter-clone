@@ -1,7 +1,8 @@
-import { TweetsActionsType, setTweetsLoadingState, setTweets } from './actionCreators';
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { TweetsApi } from '../../../services/api/tweetsApi';
-import { LoadingState } from './contracts/state';
+import { LoadingState } from './state';
+import { setTweets, setTweetsLoadingState } from './actionCreators';
+import { TweetsActionsType } from './actionTypes';
 
 export function* fetchTweetsRequest() {
    try {

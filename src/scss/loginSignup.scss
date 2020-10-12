@@ -47,16 +47,6 @@
    &__btn {
       width: 100%;
       margin-bottom: 20px;
-
-      background-color: $blue;
-      color: $white;
-
-      &:hover {
-         background-color: darken(#1da0f2f8, $amount: 5);
-      }
-
-      &:active {
-         background-color: lighten(#1da0f2, $amount: 5);
-      }
+      padding: 6px 16px;
    }
 }

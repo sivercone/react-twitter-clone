@@ -1,6 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectTagsItems } from '../store/ducks/tags/selectors';
+import { Link } from 'react-router-dom';
 
-export const ContentSidebar = () => {
+export const ContentSidebar: React.FC = () => {
+   const items = useSelector(selectTagsItems);
+
    return (
       <div className="content_sidebar">
          <div className="search">
@@ -17,21 +22,15 @@ export const ContentSidebar = () => {
                   <b>Trends for you</b>
                </div>
                <ul>
-                  <li>
-                     <span>Politics · Trending</span>
-                     <h6>ukrainian</h6>
-                     <span>38.3K Tweets</span>
-                  </li>
-                  <li>
-                     <span>Trending in Ukraine</span>
-                     <h6>Нобелевскую</h6>
-                     <span>6,620 Tweets</span>
-                  </li>
-                  <li>
-                     <span>Trending in Ukraine</span>
-                     <h6>Нобелевскую</h6>
-                     <span>6,620 Tweets</span>
-                  </li>
+                  {items.map((obj) => (
+                     <Link key={obj._id} to={`/home/search?q=${obj.name}`}>
+                        <li>
+                           <span>Development · Trending</span>
+                           <h6>{obj.name}</h6>
+                           <span>{obj.count}K Tweets</span>
+                        </li>
+                     </Link>
+                  ))}
                </ul>
             </div>
             <div className="content_sidebar__column">
@@ -39,34 +38,44 @@ export const ContentSidebar = () => {
                   <b>Who to follow</b>
                </div>
                <ul>
-                  <li>
-                     <div className="follow">
-                        <div className="follow__image">
-                           <img src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg" alt="avatar" />
+                  <Link to="/home">
+                     <li>
+                        <div className="follow">
+                           <div className="follow__image">
+                              <img
+                                 src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg"
+                                 alt="avatar"
+                              />
+                           </div>
+                           <div className="follow__name">
+                              <span>
+                                 <b>이현섭</b>
+                              </span>
+                              <span>@ohMnr99erkFynJX</span>
+                           </div>
+                           <button className="btn_dark">Follow</button>
                         </div>
-                        <div className="follow__name">
-                           <span>
-                              <b>이현섭</b>
-                           </span>
-                           <span>@ohMnr99erkFynJX</span>
+                     </li>
+                  </Link>
+                  <Link to="/home">
+                     <li>
+                        <div className="follow">
+                           <div className="follow__image">
+                              <img
+                                 src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg"
+                                 alt="avatar"
+                              />
+                           </div>
+                           <div className="follow__name">
+                              <span>
+                                 <b>이현섭</b>
+                              </span>
+                              <span>@ohMnr99erkFynJX</span>
+                           </div>
+                           <button className="btn_dark">Follow</button>
                         </div>
-                        <button>Follow</button>
-                     </div>
-                  </li>
-                  <li>
-                     <div className="follow">
-                        <div className="follow__image">
-                           <img src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg" alt="avatar" />
-                        </div>
-                        <div className="follow__name">
-                           <span>
-                              <b>이현섭</b>
-                           </span>
-                           <span>@ohMnr99erkFynJX</span>
-                        </div>
-                        <button>Follow</button>
-                     </div>
-                  </li>
+                     </li>
+                  </Link>
                </ul>
             </div>
          </div>

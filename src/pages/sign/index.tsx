@@ -45,12 +45,12 @@ export const Sign: React.FC = () => {
                   <b>Join Twitter today.</b>
                </p>
                <Link to="/signup">
-                  <button className="loginSide__btn signup">
+                  <button className="loginSide__btn btn_blue">
                      <span>Sign up</span>
                   </button>
                </Link>
                <Link to="/login">
-                  <button className="loginSide__btn login">
+                  <button className="loginSide__btn btn_dark">
                      <span>Log in</span>
                   </button>
                </Link>

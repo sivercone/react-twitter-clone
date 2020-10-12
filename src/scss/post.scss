@@ -24,6 +24,9 @@
 
       &__more {
          button {
+            display: inline-flex;
+            justify-content: center;
+            min-width: 50px;
             color: $blue;
             background: none;
          }
@@ -48,6 +51,7 @@
 
          button {
             margin-left: 5px;
+            padding: 6px 16px;
          }
       }
    }

@@ -21,8 +21,10 @@ export const Login: React.FC = () => {
                   <input type="password" />
                </div>
             </div>
-            <button className="loginSignup__btn">Log in</button>
-            <Link to="/signup">Sign up for Twitter</Link>
+            <button className="loginSignup__btn btn_blue">Log in</button>
+            <Link className="link" to="/signup">
+               Sign up for Twitter
+            </Link>
          </div>
       </div>
    );
