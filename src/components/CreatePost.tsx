@@ -1,10 +1,13 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
+import { useDispatch } from 'react-redux';
+import { fetchCreateTweet } from '../store/ducks/tweets/actionCreators';
 
-export const CreatePost = () => {
+export const CreatePost: React.FC = () => {
+   const dispatch = useDispatch();
    const [text, setText] = React.useState<string>('');
 
-   const TEXT_LIMIT: number = 280;
+   const TEXT_LIMIT: number = 281;
    const normalizedRadius: number = 9 * 2 * Math.PI;
    const strokeDashoffset: number = normalizedRadius - (text.length / TEXT_LIMIT) * normalizedRadius;
    const textCount: number = TEXT_LIMIT - text.length - 1;
@@ -16,6 +19,7 @@ export const CreatePost = () => {
    };
 
    const addTweet = (): void => {
+      dispatch(fetchCreateTweet(text));
       setText('');
    };
 
@@ -66,7 +70,7 @@ export const CreatePost = () => {
                   </>
                )}
 
-               <button className="btn_blue" onClick={addTweet} disabled={text.length >= TEXT_LIMIT}>
+               <button className="btn_blue" onClick={addTweet} disabled={text.length >= TEXT_LIMIT || text.length === 0}>
                   Tweet
                </button>
             </div>

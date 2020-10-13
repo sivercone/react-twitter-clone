@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface TweetsProps {
+   _id: any;
    text: string;
    user: {
       fullname: string;
       username: string;
       avatarUrl: string;
    };
-   _id: any;
 }
 
 export const Tweets: React.FC<TweetsProps> = ({ text, user, _id }): React.ReactElement => {
