@@ -1,7 +1,7 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { TweetsApi } from '../../../services/api/tweetsApi';
-import { LoadingState, Tweet } from './state';
-import { setTweets, setTweetsLoadingState, CreateTweet } from './actionCreators';
+import { LoadingState, Tweet, CreateTweetState } from './state';
+import { setTweets, setTweetsLoadingState, CreateTweet, setCreateTweetState } from './actionCreators';
 import { TweetsActionsType, IFetchCreateTweetAction } from './actionTypes';
 
 export function* fetchTweetsRequest() {
@@ -27,7 +27,7 @@ export function* fetchCreateTweetRequest({ payload }: IFetchCreateTweetAction) {
       const item = yield call(TweetsApi.fetchCreateTweet, data);
       yield put(CreateTweet(item));
    } catch (error) {
-      yield put(setTweetsLoadingState(LoadingState.ERROR));
+      yield put(setCreateTweetState(CreateTweetState.ERROR));
    }
 }
 

@@ -19,6 +19,9 @@ export const CreatePost: React.FC = () => {
    };
 
    const addTweet = (): void => {
+      if (!text.trim()) {
+         return;
+      }
       dispatch(fetchCreateTweet(text));
       setText('');
    };
@@ -51,7 +54,7 @@ export const CreatePost: React.FC = () => {
             <div className="post__buttons__send">
                {text && (
                   <>
-                     <span>{textCount}</span>
+                     <span>{textCount <= 30 ? textCount : ''}</span>
                      <div className="progressbar">
                         <svg height="100%" viewBox="0 0 20 20" width="100%" style={{ overflow: 'visible' }}>
                            <circle cx="50%" cy="50%" fill="none" strokeWidth="2" r="9" stroke="#38444D"></circle>
@@ -70,7 +73,7 @@ export const CreatePost: React.FC = () => {
                   </>
                )}
 
-               <button className="btn_blue" onClick={addTweet} disabled={text.length >= TEXT_LIMIT || text.length === 0}>
+               <button className="btn_blue" onClick={addTweet} disabled={text.length >= TEXT_LIMIT || !text || !text.trim()}>
                   Tweet
                </button>
             </div>

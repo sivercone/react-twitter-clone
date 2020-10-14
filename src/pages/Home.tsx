@@ -37,11 +37,13 @@ export const Home: React.FC = () => {
 
                <Route path="/home/tweet/:id" component={Tweet} exact />
                <div className="post__bottom"></div>
-               <Route path="/home" exact>
-                  {tweets.map((tweet) => (
-                     <Tweets key={tweet._id} {...tweet} />
-                  ))}
-               </Route>
+               <div className="tweets-reverse">
+                  <Route path="/home" exact>
+                     {tweets.map((tweet) => (
+                        <Tweets key={tweet._id} {...tweet} />
+                     ))}
+                  </Route>
+               </div>
             </div>
             <ContentSidebar />
          </div>
