@@ -40,6 +40,8 @@ export const Tweets: React.FC<TweetsProps> = ({ text, user, _id, createdAt }): R
       document.body.addEventListener('click', nonPopupClick);
    }, []);
 
+   console.log(user);
+
    return (
       <div className="tweet">
          <a onClick={handleClickTweet} href={`/home/tweet/${_id}`} className="tweet-wrapper">

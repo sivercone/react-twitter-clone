@@ -1,8 +1,9 @@
 export enum LoadingState {
-   // LOADING = 'LOADING',
+   LOADING = 'LOADING',
    LOADED = 'LOADED',
    ERROR = 'ERROR',
    NEVER = 'NEVER',
+   SUCCESS = 'SUCCESS',
 }
 
 export interface UserInterface {

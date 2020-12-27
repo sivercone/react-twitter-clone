@@ -75,7 +75,6 @@
 
       ul {
          li {
-            padding: 13px 18px;
             margin: 0;
             width: 100%;
             box-shadow: 0 1px 1px -1px #8899a6;
@@ -83,6 +82,11 @@
 
             &:hover {
                background-color: #202e3a;
+            }
+
+            a {
+               display: block;
+               padding: 13px 18px;
             }
 
             span {
@@ -124,11 +128,9 @@
             }
          }
 
-         a:last-child {
-            li {
-               box-shadow: none;
-               border-radius: 0 0 20px 20px;
-            }
+         li:last-child {
+            box-shadow: none;
+            border-radius: 0 0 20px 20px;
          }
       }
    }

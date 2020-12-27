@@ -4,8 +4,10 @@ import {
    UserActionsType,
    SetUserLoadingStateInterface,
    FetchSignInActionInterface,
+   FetchSignUpActionInterface,
 } from './actionTypes';
 import { LoginFormProps } from '../../../pages/sign/Login';
+import { RegisterFormProps } from '../../../pages/sign/SignUp';
 
 export const setUserData = (payload: UserState['data']): SetUserDataActionInterface => ({
    type: UserActionsType.SET_USER_DATA,
@@ -22,4 +24,13 @@ export const fetchSignIn = (payload: LoginFormProps): FetchSignInActionInterface
    payload,
 });
 
-export type UserActions = SetUserDataActionInterface | SetUserLoadingStateInterface | FetchSignInActionInterface;
+export const fetchSignUp = (payload: RegisterFormProps): FetchSignUpActionInterface => ({
+   type: UserActionsType.FETCH_SIGN_UP,
+   payload,
+});
+
+export type UserActions =
+   | SetUserDataActionInterface
+   | SetUserLoadingStateInterface
+   | FetchSignInActionInterface
+   | FetchSignUpActionInterface;

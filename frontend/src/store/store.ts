@@ -6,6 +6,7 @@ import { rootReducer } from './rootReducer';
 import { TweetsState } from './ducks/tweets/state';
 import { TagsState } from './ducks/tags/state';
 import { UserState } from './ducks/user/state';
+import { UsersState } from './ducks/users/state';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -13,6 +14,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 export interface RootState {
    user: UserState;
+   users: UsersState;
    loadingState: any;
    items: any;
    tweets: TweetsState;

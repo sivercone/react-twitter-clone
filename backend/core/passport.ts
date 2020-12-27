@@ -18,7 +18,7 @@ passport.use(
             }
 
             // если есть пользователь проверяем пароль
-            if (user.password === generateMD5(password + process.env.SECRET_KEY)) {
+            if (user.confirmed && user.password === generateMD5(password + process.env.SECRET_KEY)) {
                done(null, user);
             } else {
                done(null, false);

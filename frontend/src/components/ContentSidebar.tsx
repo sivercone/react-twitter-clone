@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectTagsItems } from '../store/ducks/tags/selectors';
 import { Link } from 'react-router-dom';
+import { Users } from './Users';
 
 export const ContentSidebar: React.FC = () => {
    const items = useSelector(selectTagsItems);
@@ -37,46 +38,7 @@ export const ContentSidebar: React.FC = () => {
                <div className="content_sidebar__title">
                   <b>Who to follow</b>
                </div>
-               <ul>
-                  <Link to="/home">
-                     <li>
-                        <div className="follow">
-                           <div className="follow__image">
-                              <img
-                                 src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg"
-                                 alt="avatar"
-                              />
-                           </div>
-                           <div className="follow__name">
-                              <span>
-                                 <b>이현섭</b>
-                              </span>
-                              <span>@ohMnr99erkFynJX</span>
-                           </div>
-                           <button className="btn_dark">Follow</button>
-                        </div>
-                     </li>
-                  </Link>
-                  <Link to="/home">
-                     <li>
-                        <div className="follow">
-                           <div className="follow__image">
-                              <img
-                                 src="https://pbs.twimg.com/profile_images/1272186775281123328/_PHu_9SU_bigger.jpg"
-                                 alt="avatar"
-                              />
-                           </div>
-                           <div className="follow__name">
-                              <span>
-                                 <b>이현섭</b>
-                              </span>
-                              <span>@ohMnr99erkFynJX</span>
-                           </div>
-                           <button className="btn_dark">Follow</button>
-                        </div>
-                     </li>
-                  </Link>
-               </ul>
+               <Users />
             </div>
          </div>
       </div>
